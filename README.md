@@ -1,8 +1,9 @@
 # TrafficLens
 
-[![CI](https://github.com/escwxyz/traffic-lens/actions/workflows/ci.yaml/badge.svg)](https://github.com/escwxyz/traffic-lens/actions/workflows/ci.yaml)
+[![CI](https://github.com/escwxyz/traffic-lens/actions/workflows/ci.yml/badge.svg)](https://github.com/escwxyz/traffic-lens/actions/workflows/ci.yml)
 [![npm version](https://badge.fury.io/js/traffic-lens.svg)](https://badge.fury.io/js/traffic-lens)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/npm/dt/traffic-lens.svg)](https://www.npmjs.com/package/traffic-lens)
 
 A Node.js library for monitoring network traffic with proxy connection awareness. TrafficLens provides real-time statistics about your system's network usage, distinguishing between proxied and direct traffic.
 
