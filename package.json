@@ -1,11 +1,13 @@
 {
   "name": "traffic-lens",
   "version": "1.0.0",
-  "description": "",
+  "description": "A network traffic monitoring tool with proxy awareness for Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "test": "vitest",
@@ -14,13 +16,46 @@
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
     "build": "tsc",
+    "prebuild": "rm -rf dist",
     "format": "prettier --write .",
-    "publish": "pnpm run build && pnpm publish",
+    "lint": "prettier --check .",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm test && pnpm run lint",
+    "preversion": "pnpm run lint",
+    "version": "pnpm run format && git add -A src",
+    "postversion": "git push && git push --tags",
     "release": "release-it"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "network",
+    "monitoring",
+    "proxy",
+    "traffic",
+    "bandwidth",
+    "network-stats",
+    "network-monitor",
+    "proxy-stats",
+    "traffic-monitor",
+    "network-metrics",
+    "typescript",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Jie Wang",
+    "url": "https://github.com/escwxyz"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escwxyz/traffic-lens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/escwxyz/traffic-lens/issues"
+  },
+  "homepage": "https://github.com/escwxyz/traffic-lens#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "devDependencies": {
     "@types/node": "^22.8.1",
     "@vitest/coverage-v8": "^2.1.3",
