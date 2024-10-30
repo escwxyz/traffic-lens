@@ -2,6 +2,7 @@
   "name": "traffic-lens",
   "version": "0.0.1",
   "description": "A network traffic monitoring tool with proxy awareness for Node.js",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,7 +17,7 @@
     "test:integration": "vitest run tests/integration",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "prebuild": "rm -rf dist",
     "format": "prettier --write .",
     "lint": "prettier --check .",

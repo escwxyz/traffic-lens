@@ -6,6 +6,11 @@ permissions:
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (major, minor, patch, or specific version)"
+        required: true
+        default: "patch"
 
 jobs:
   release:
@@ -33,7 +38,7 @@ jobs:
             - args: [--frozen-lockfile]
 
       - name: Release
-        run: npx release-it --verbose
+        run: npx release-it ${{ github.event.inputs.version }} --ci
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

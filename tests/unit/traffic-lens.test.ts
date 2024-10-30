@@ -1,7 +1,7 @@
 import { vi, describe, it, expect, beforeEach } from "vitest";
-import TrafficLens from "../../src";
+import TrafficLens from "../../src/index.js";
 import * as si from "systeminformation";
-import { mockNetworkStats, mockNetworkConnections, expectedStats } from "../fixtures/mock-data";
+import { mockNetworkStats, mockNetworkConnections, expectedStats } from "../fixtures/mock-data.js";
 
 // Mock systeminformation module
 vi.mock("systeminformation", () => ({
